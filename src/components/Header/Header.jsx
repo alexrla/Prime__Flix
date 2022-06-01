@@ -27,6 +27,8 @@ const HeaderContainer = styled.header`
 
     justify-content: space-around;
 
+    opacity: 0.8;
+
     position: fixed;
 
     right: 0;
@@ -36,7 +38,7 @@ const HeaderContainer = styled.header`
     width: 100%;
 
     .logo   {
-        color: #ffffff;
+        color: #FFFFFF;
 
         text-decoration: none;
 
@@ -53,6 +55,8 @@ const HeaderContainer = styled.header`
         color: #FFFFFF;
 
         font-size: 10px;
+
+        font-weight: bold;
 
         padding: 10px;
 
