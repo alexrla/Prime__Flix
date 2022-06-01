@@ -10,6 +10,7 @@ import api from '../../services/api';
 
 export default function Home()  {
     const [ movies, setMovies ] = useState([]);
+    const [ loading, setLoading ] = useState(true);
 
     useEffect(() => {
          async function loadMovies() {
@@ -22,34 +23,56 @@ export default function Home()  {
              });
 
              setMovies(response.data.results);
+             setLoading(false);
         }
 
         loadMovies();
     }, []);
 
-    return (
-        <>
-            <Div></Div>
-            <Container>
-                <MovieList>
-                    {movies.map((movie) => {
-                        return (
-                            <article key={movie.id} className="movie">
-                                <div className="title">
-                                    <span>{movie.title}</span>
-                                </div>
-
-                                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-                                
-                                <Link to={`/filme/${movie.id}`} className="link-access">Acessar</Link>
-                            </article>
-                        )
-                    })}
-                </MovieList>
-            </Container>
-        </>
-    );
+    if(loading) {
+        return (
+            <Loader>
+                <h2>Carregando filmes...</h2>
+            </Loader>
+        );
+    }
+    else    {
+        return (
+            <>
+                <Div></Div>
+                <Container>
+                    <MovieList>
+                        {movies.map((movie) => {
+                            return (
+                                <article key={movie.id} className="movie">
+                                    <div className="title">
+                                        <span>{movie.title}</span>
+                                    </div>
+    
+                                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                                    
+                                    <Link to={`/filme/${movie.id}`} className="link-access">Acessar</Link>
+                                </article>
+                            )
+                        })}
+                    </MovieList>
+                </Container>
+            </>
+        );
+    }
 }
+
+const Loader = styled.div`
+    align-items: center; 
+
+    color: #FFFFFF;
+
+    display: flex;
+
+    height: 100vh;
+
+    justify-content: center;
+`;
 
 const Div = styled.div`
     background-color: #000000;
