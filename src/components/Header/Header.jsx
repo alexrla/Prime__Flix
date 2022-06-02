@@ -25,9 +25,7 @@ const HeaderContainer = styled.header`
 
     height: 60px;
 
-    justify-content: space-around;
-
-    opacity: 0.8;
+    justify-content: center;
 
     position: fixed;
 
@@ -36,6 +34,8 @@ const HeaderContainer = styled.header`
     top: 0;
 
     width: 100%;
+
+    z-index: 1;
 
     .logo   {
         color: #FFFFFF;
@@ -63,8 +63,6 @@ const HeaderContainer = styled.header`
         position: absolute;
 
         right: 20px;
-
-        text-decoration: none;
     }
 
     .filmes-favoritos:hover {

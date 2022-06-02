@@ -4,30 +4,35 @@ import styled from 'styled-components';
 
 export default function NotFound()  {
     return (
-        <Div>
-            <span>☹</span>
+        <>
+            <Div></Div>
+            <Container>
+                <span>☹</span>
 
-            <h1>404</h1>
+                <h1>404</h1>
 
-            <p>Página não encontrada!</p>
+                <p>Página não encontrada!</p>
 
-            <Link to={"/"} className="home">Voltar para a página inicial</Link>
-        </Div>
+                <Link to={"/"} className="home">Voltar para a página inicial</Link>
+            </Container>
+        </>
     );
 }
 
 const Div = styled.div`
-    align-items: center;
+    background-color: #000000;
 
-    color: #FFFFFF;
+    height: 60px;
+`;
+
+const Container = styled.div`
+    align-items: center;
 
     display: flex;
 
     flex-direction: column;
 
-    font-weight: bold;
-
-    height: 100vh;
+    height: calc(100vh - 60px);
 
     justify-content: center;
 
@@ -49,6 +54,8 @@ const Div = styled.div`
         font-size: 30px;
 
         padding-bottom: 40px;
+
+        text-align: center;
     }
 
     .home   {
@@ -56,11 +63,7 @@ const Div = styled.div`
 
         border-radius: 10px;
 
-        color: #FFFFFF;
-
         font-size: 10px;
-
-        font-weight: bold;
 
         padding: 15px;
 

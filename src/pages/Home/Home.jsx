@@ -13,7 +13,7 @@ export default function Home()  {
     const [ loading, setLoading ] = useState(true);
 
     useEffect(() => {
-         async function loadMovies() {
+         async function loadingMovies() {
              const response = await api.get("movie/now_playing", {
                  params: {
                      api_key: "8bc0807f00a485ae205d0e186e5b7d45",
@@ -26,7 +26,7 @@ export default function Home()  {
              setLoading(false);
         }
 
-        loadMovies();
+        loadingMovies();
     }, []);
 
     if(loading) {
@@ -65,11 +65,11 @@ export default function Home()  {
 const Loader = styled.div`
     align-items: center; 
 
-    color: #FFFFFF;
-
     display: flex;
 
-    height: 100vh;
+    font-size: 24px;
+
+    height: calc(100vh - 60px);
 
     justify-content: center;
 `;
@@ -96,6 +96,8 @@ const MovieList = styled.div`
     flex-wrap: wrap;
 
     justify-content: space-between;
+
+    max-width: 90%;
 
     width: 800px;
 
@@ -132,11 +134,7 @@ const MovieList = styled.div`
     }
 
     .title > span   {
-        color: #FFFFFF;
-
         font-size: 16px;
-
-        font-weight: bold;
     }
 
     .movie > img    {
@@ -154,17 +152,11 @@ const MovieList = styled.div`
 
         border-radius: 10px;
 
-        color: #FFFFFF;
-
         font-size: 10px;
-
-        font-weight: bold;
 
         margin-bottom: 10px;
 
         padding: 10px;
-
-        text-decoration: none;
     }
 
     .link-access:hover {
