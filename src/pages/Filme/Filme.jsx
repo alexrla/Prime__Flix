@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import { useParams, useNavigate } from "react-router-dom";
 
+import { toast } from 'react-toastify';
+
 import styled from "styled-components";
 
 import api from "../../services/api";
@@ -27,7 +29,7 @@ export default function Filme()  {
                 setLoading(false);
             })
             .catch(() => {
-                navigate("/*", { replace: true })
+                navigate("*", { replace: true })
                 alert("Filme não encontrado!");
                 return;
             })
@@ -44,7 +46,7 @@ export default function Filme()  {
         const selectedMovie = savedMovies.some((savedMovie) => savedMovie.id === movie.id);
 
         if(selectedMovie)   {
-            alert("Esse filme já foi adicionado!");
+            toast.warn("Esse filme já foi adicionado!");
             return;
         }
         
@@ -52,7 +54,7 @@ export default function Filme()  {
 
         localStorage.setItem("@primeflix", JSON.stringify(savedMovies));
 
-        alert("Filme adicionado com sucesso!");
+        toast.success("Filme adicionado com sucesso!");
     }
 
     if(loading) {
