@@ -211,15 +211,25 @@ const Sinopse = styled.div`
 
         text-align: justify;
     }
+
+    @media (max-width: 371px)   {
+       p    {
+        line-height: 20px;
+       } 
+    }
 `;
 
 const Buttons = styled.div`
     display: flex;
 
+    justify-content: space-between;
+
     margin-top: 10px;
 
+    width: 100%;
+
     .margin {
-        width: 30px
+        width: 100px
     }
 
     .add, .trailer {
@@ -231,11 +241,13 @@ const Buttons = styled.div`
 
         color: #FFFFFF;
 
-        font-size: 10px;
+        font-size: 12px;
 
         font-weight: bold;
 
         padding: 10px;
+
+        width: 300px;
     }
 
     .add:hover, .trailer:hover {
@@ -243,4 +255,8 @@ const Buttons = styled.div`
 
         cursor: pointer;
     }
+
+    @media (max-width: 441px)   {
+        margin-top: 20px;
+     }
 `;

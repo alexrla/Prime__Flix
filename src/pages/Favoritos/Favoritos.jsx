@@ -76,6 +76,8 @@ const Content = styled.div`
 
     flex-direction: column;
 
+    width: 100%;
+
     h1  {
         font-size: 20px;
 
@@ -144,5 +146,39 @@ const Content = styled.div`
         background-color: #B02220;
 
         cursor: pointer;
+    }
+
+    @media (max-width: 512px)   {
+        ul  {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 475px)   {
+        li  {
+            background-color: rgba(0, 0, 0, 0.4);
+
+            flex-direction: column;
+
+            margin-bottom: 30px;
+
+            padding-bottom: 70px;
+
+            position: relative;
+        }
+
+        a   {
+            font-size: 28px;
+
+            text-align: center;
+        }
+
+        button  {
+            margin-top: 20px;
+
+            position: absolute;
+
+            bottom 10px;
+        }
     }
 `;

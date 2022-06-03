@@ -66,6 +66,14 @@ const HeaderContainer = styled.header`
     }
 
     .filmes-favoritos:hover {
-        background-color: #B02220;
+        background-color: #B02220;display
+    }
+
+    @media (max-width: 371px)   {
+        justify-content: space-around;
+        
+        .filmes-favoritos   {
+            position: initial;
+        }
     }
 `;

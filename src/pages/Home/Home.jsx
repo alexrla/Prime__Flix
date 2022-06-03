@@ -41,7 +41,7 @@ export default function Home()  {
             <>
                 <Div></Div>
                 <Container>
-                    <MovieList>
+                    <MovieList className="movieList">
                         {movies.map((movie) => {
                             return (
                                 <article key={movie.id} className="movie">
@@ -86,8 +86,6 @@ const Container = styled.div`
     display: flex;
 
     justify-content: center;
-
-    padding-top: 5px;
 `;
 
 const MovieList = styled.div`
@@ -120,6 +118,8 @@ const MovieList = styled.div`
 
         text-align: center;
 
+        max-width: 90%;
+
         width: 350px;
     }
 
@@ -144,6 +144,8 @@ const MovieList = styled.div`
 
         margin-bottom: 10px;
 
+        max-width: 100%;
+
         width: 300px;
     }
 
@@ -161,5 +163,21 @@ const MovieList = styled.div`
 
     .link-access:hover {
         background-color: #B02220;
+    }
+
+    @media (max-width: 866px)   {
+        align-items: center;
+    
+        flex-direction: column;
+    }
+
+    @media (max-width: 371px)   {
+        .movie  {
+            border-radius: 0;
+        }
+
+        .movie > img  {
+            border-radius: 0;
+        }
     }
 `;
