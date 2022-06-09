@@ -66,7 +66,7 @@ const HeaderContainer = styled.header`
     }
 
     .filmes-favoritos:hover {
-        background-color: #B02220;display
+        background-color: #B02220;
     }
 
     @media (max-width: 371px)   {
